@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35806.99
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Domain", "2 - Domain", "{36EC68CC-58B4-4126-97CF-1FC4E4283192}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Service", "3 - Service", "{2673ECB4-DBF9-40F9-AD34-72FD161EE2A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{9FD53CB7-55D0-44CE-A0E0-83BB355A9370}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Worker", "5 - Worker", "{949F07AE-42AE-4F73-8F39-F792573B77D0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - Data", "4.1 - Data", "{56FAACC9-FEBD-47B7-9D28-B17077514536}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 - CrossCutting", "4.2 - CrossCutting", "{ADD45E4F-9369-42C6-BAE3-E67E9419C4D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMobit.Api", "src\API\TestMobit.Api\TestMobit.Api.csproj", "{F3D098C3-0266-43BB-89E9-AA7FDBB9A015}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMobit.Domain", "src\Domain\TestMobit.Domain\TestMobit.Domain.csproj", "{ABE77506-5F77-49A2-A5AC-EC7D91123542}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMobit.Service", "src\Service\TestMobit.Service\TestMobit.Service.csproj", "{3D47272B-0E65-434D-A83B-0980A1027FEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMobit.Worker", "src\Worker\TestMobit.Worker\TestMobit.Worker.csproj", "{F32127C8-E5C3-4441-BE6E-E7AD069F5D9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMobit.Infra.Data.DatabaseRepository", "src\Infra\Data\TestMobit.Infra.Data.DatabaseRepository\TestMobit.Infra.Data.DatabaseRepository.csproj", "{35B12393-42A3-47C2-8E69-B1AAFBCB9E2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMobit.Infra.CrossCutting", "src\Infra\CrossCutting\TestMobit.Infra.CrossCutting\TestMobit.Infra.CrossCutting.csproj", "{32218E39-730B-4F10-A1E3-5D9430EB2D0F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3D098C3-0266-43BB-89E9-AA7FDBB9A015}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3D098C3-0266-43BB-89E9-AA7FDBB9A015}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3D098C3-0266-43BB-89E9-AA7FDBB9A015}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3D098C3-0266-43BB-89E9-AA7FDBB9A015}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABE77506-5F77-49A2-A5AC-EC7D91123542}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABE77506-5F77-49A2-A5AC-EC7D91123542}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABE77506-5F77-49A2-A5AC-EC7D91123542}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABE77506-5F77-49A2-A5AC-EC7D91123542}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D47272B-0E65-434D-A83B-0980A1027FEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D47272B-0E65-434D-A83B-0980A1027FEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D47272B-0E65-434D-A83B-0980A1027FEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D47272B-0E65-434D-A83B-0980A1027FEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F32127C8-E5C3-4441-BE6E-E7AD069F5D9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F32127C8-E5C3-4441-BE6E-E7AD069F5D9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F32127C8-E5C3-4441-BE6E-E7AD069F5D9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F32127C8-E5C3-4441-BE6E-E7AD069F5D9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35B12393-42A3-47C2-8E69-B1AAFBCB9E2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35B12393-42A3-47C2-8E69-B1AAFBCB9E2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35B12393-42A3-47C2-8E69-B1AAFBCB9E2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35B12393-42A3-47C2-8E69-B1AAFBCB9E2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32218E39-730B-4F10-A1E3-5D9430EB2D0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32218E39-730B-4F10-A1E3-5D9430EB2D0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32218E39-730B-4F10-A1E3-5D9430EB2D0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32218E39-730B-4F10-A1E3-5D9430EB2D0F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{56FAACC9-FEBD-47B7-9D28-B17077514536} = {9FD53CB7-55D0-44CE-A0E0-83BB355A9370}
+		{ADD45E4F-9369-42C6-BAE3-E67E9419C4D5} = {9FD53CB7-55D0-44CE-A0E0-83BB355A9370}
+		{F3D098C3-0266-43BB-89E9-AA7FDBB9A015} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{ABE77506-5F77-49A2-A5AC-EC7D91123542} = {36EC68CC-58B4-4126-97CF-1FC4E4283192}
+		{3D47272B-0E65-434D-A83B-0980A1027FEB} = {2673ECB4-DBF9-40F9-AD34-72FD161EE2A6}
+		{F32127C8-E5C3-4441-BE6E-E7AD069F5D9F} = {949F07AE-42AE-4F73-8F39-F792573B77D0}
+		{35B12393-42A3-47C2-8E69-B1AAFBCB9E2F} = {56FAACC9-FEBD-47B7-9D28-B17077514536}
+		{32218E39-730B-4F10-A1E3-5D9430EB2D0F} = {ADD45E4F-9369-42C6-BAE3-E67E9419C4D5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {95C5F477-292F-456F-865D-922356FF5E6A}
+	EndGlobalSection
+EndGlobal
