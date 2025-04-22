@@ -11,16 +11,18 @@ namespace TestMobit.Api.Endpoints.User
 {
     public class UserApi : IEndpointsApi
     {
-        public void MapEndpoints(IApplicationBuilder builder, IEndpointRouteBuilder endpoint)
+        public string GroupName { get => "User";}
+
+        public void MapEndpoints(RouteGroupBuilder group)
         {
-            endpoint.MapPost("SignUp", async (UserRequest userRequest, IMapper _mapper, IUserService _userService) =>
+            group.MapPost("SignUp", async (UserRequest userRequest, IMapper _mapper, IUserService _userService) =>
             {
                 var userEntity = _mapper.Map<UserEntity>(userRequest.Data);
                 await _userService.Add(userEntity);
                 return Results.Ok(userRequest);
             });
 
-            endpoint.MapPost("SignIn", async (UserRequest userRequest, IMapper _mapper, IUserService _userService, JwtBearerToken jwtBearerToken) =>
+            group.MapPost("SignIn", async (UserRequest userRequest, IMapper _mapper, IUserService _userService, JwtBearerToken jwtBearerToken) =>
             {
                 var userEntity = _mapper.Map<UserEntity>(userRequest.Data);
                 var result = await _userService.Login(userEntity);

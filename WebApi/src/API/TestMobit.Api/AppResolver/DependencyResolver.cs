@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 using TestMobit.Api.Abstraction;
 using TestMobit.Api.Mapping;
@@ -92,7 +93,9 @@ namespace TestMobit.Api.AppResolver
 
             foreach (IEndpointsApi service in services)
             {
-                service.MapEndpoints(app, endpoint);
+                var group = endpoint.MapGroup($"/{service.GroupName}");
+                group.WithTags(service.GroupName);
+                service.MapEndpoints(group);
             }
 
             return app;

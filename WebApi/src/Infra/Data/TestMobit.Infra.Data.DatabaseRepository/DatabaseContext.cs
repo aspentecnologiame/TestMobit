@@ -10,6 +10,7 @@ namespace TestMobit.Infra.Data.DatabaseRepository
         {
         }
         public DbSet<UserEntity> Users { get; set; }
+        public DbSet<EnterpriseEntity> Enterprises { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

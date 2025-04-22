@@ -2,6 +2,7 @@
 {
     public interface IEndpointsApi
     {
-        void MapEndpoints(IApplicationBuilder builder, IEndpointRouteBuilder endpoint);
+        string GroupName { get; }
+        void MapEndpoints(RouteGroupBuilder group);
     }
 }

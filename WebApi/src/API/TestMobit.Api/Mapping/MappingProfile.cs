@@ -16,11 +16,13 @@ namespace TestMobit.Api.Mapping
         private void CreateMappingRequest()
         {
             CreateMap<UserRequestDto, UserEntity>();
+            CreateMap<EnterpriseDto, EnterpriseEntity>();
         }
 
         private void CreateMappingResponse()
         {
             CreateMap<UserEntity, UserRequestDto>();
+            CreateMap<EnterpriseEntity, EnterpriseDto>();
         }
     }
 }
