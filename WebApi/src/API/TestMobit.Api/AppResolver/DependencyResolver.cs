@@ -12,6 +12,7 @@ using TestMobit.Api.Mapping;
 using TestMobit.Api.Requirements;
 using TestMobit.Api.Security;
 using TestMobit.Domain.Configurations;
+using TestMobit.Service.Hubs;
 
 namespace TestMobit.Api.AppResolver
 {
@@ -64,10 +65,36 @@ namespace TestMobit.Api.AppResolver
             services.AddLogging(loggingBuilder => loggingBuilder.SetMinimumLevel(LogLevel.Trace));
 
             services.AddEndpoints();
+            services.AddSignalR(options =>
+            {
+                options.EnableDetailedErrors = true;
+            });
 
             services.AddHostedService<Worker.WorkerService.Worker>();
 
             return services;
+        }
+
+        public static IApplicationBuilder MapGroups(this WebApplication app, RouteGroupBuilder? routeGroupBuilder = null)
+        {
+            var services = app.Services.GetServices<IEndpointsApi>();
+
+            IEndpointRouteBuilder endpoint = routeGroupBuilder is null ? app : routeGroupBuilder;
+
+            foreach (IEndpointsApi service in services)
+            {
+                var group = endpoint.MapGroup($"/{service.GroupName}");
+                group.WithTags(service.GroupName);
+                service.MapEndpoints(group);
+            }
+
+            return app;
+        }
+
+        public static IApplicationBuilder MapHubs(this WebApplication app)
+        {
+            app.MapHub<EnterpriseHub>("/hub/enterprise");
+            return app;
         }
 
         private static IServiceCollection AddEndpoints(this IServiceCollection services)
@@ -83,22 +110,6 @@ namespace TestMobit.Api.AppResolver
                 );
 
             return services;
-        }
-
-        public static IApplicationBuilder MapEndpoints(this WebApplication app, RouteGroupBuilder? routeGroupBuilder = null)
-        {
-            var services = app.Services.GetServices<IEndpointsApi>();
-
-            IEndpointRouteBuilder endpoint = routeGroupBuilder is null ? app : routeGroupBuilder;
-
-            foreach (IEndpointsApi service in services)
-            {
-                var group = endpoint.MapGroup($"/{service.GroupName}");
-                group.WithTags(service.GroupName);
-                service.MapEndpoints(group);
-            }
-
-            return app;
         }
 
         private static IServiceCollection RegisterHangfireDependencies(this IServiceCollection services, IConfiguration configuration)

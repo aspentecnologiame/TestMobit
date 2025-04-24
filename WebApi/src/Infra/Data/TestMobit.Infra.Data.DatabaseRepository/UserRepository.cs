@@ -11,8 +11,8 @@ namespace TestMobit.Infra.Data.DatabaseRepository
         {
         }
 
-        public async Task<UserEntity> GetByUserName(string name) => await Task.FromResult(Find(x => x.Login == name).FirstOrDefault());
+        public async Task<UserEntity> GetByUserName(string name) => await Task.FromResult(Find(x => x.Login == name).FirstOrDefault()) ?? new UserEntity();
 
-        public async Task<UserEntity> Login(UserEntity userEntity) => await Task.FromResult(Find(x => x.Login == userEntity.Login && x.Password == userEntity.Password).FirstOrDefault());
+        public async Task<UserEntity> Login(UserEntity userEntity) => await Task.FromResult(Find(x => x.Login == userEntity.Login && x.Password == userEntity.Password).FirstOrDefault()) ?? new UserEntity();
     }
 }

@@ -25,7 +25,8 @@ RouteGroupBuilder versionedGroup = app
     .MapGroup("api/v{version:apiVersion}")
     .WithApiVersionSet(apiVersionSet);
 
-app.MapEndpoints(versionedGroup);
+app.MapGroups(versionedGroup);
+app.MapHubs();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
