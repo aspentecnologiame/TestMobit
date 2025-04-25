@@ -27,7 +27,7 @@ namespace TestMobit.Service
                 user.Password = await _cryptographyService.Encrypt(user.Password);
                 var existingUser = await _userRepository.GetByUserName(user.Login);
 
-                if (existingUser != null)
+                if (existingUser != null && existingUser.Id != Guid.Empty)
                     throw new ApplicationException("User already exists");
 
                 await _userRepository.Add(user);
